@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 
-export default class Carts extends PureComponent {
+export default class Carts extends Component {
   static propTypes = {}
 
   render() {

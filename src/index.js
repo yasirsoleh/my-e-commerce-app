@@ -3,12 +3,30 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Home from './components/Home'
+import Carts from './components/Carts';
+import Login from './components/Login';
+import Products from './components/Products';
+import Profile from './components/Profile';
+import Register from './components/Register';
+import SingleProduct from './components/SingleProduct';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <Routes>
+        <Route path="/" element={<App/>}>
+          <Route path="/" element={<Home/>}/>
+          <Route path="products" element={<Products/>}/>
+          <Route path="products/:id" element={<SingleProduct/>}/>
+          <Route path="carts" element={<Carts/>}/>
+          <Route path="profile" element={<Profile/>}/>
+          <Route path="register" element={<Register/>}/>
+          <Route path="login" element={<Login/>}/>
+        </Route>
+      </Routes>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

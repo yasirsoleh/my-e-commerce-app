@@ -1,17 +1,20 @@
+import { Route, Router, Switch } from 'react-router-dom';
 import './App.css';
 
 function App() {
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
-      <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes"></img></figure>
-      <div className="card-body">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
-        </div>
-      </div>
-    </div>
+    <Router>
+      <Navbar/>
+      <Switch>
+        <Route path="/" exact component={()=><Home/>}/>
+        <Route path="/products" exact component={()=><Products/>}/>
+        <Route path="/products/:id" exact component={()=><SingleProduct/>}/>
+        <Route path="/carts" exact component={()=><Carts/>}/>
+        <Route path="/profile" exact component={()=><Profile/>}/>
+        <Route path="/register" exact component={()=><Register/>}/>
+        <Route path="/login" exact component={()=><Login/>}/>
+      </Switch>
+    </Router>
   );
 }
 

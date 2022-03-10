@@ -1,19 +1,15 @@
 import './App.css';
-import React from 'react';
+import React, { Component } from 'react';
+import Navbar from './Components/Navbar';
+import Products from './Components/Products';
 
-class App extends React.Component {
+class App extends Component {
   state = {  } 
   render() { 
     return (
-      <div className="card w-96 bg-base-100 shadow-xl">
-        <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes"></img></figure>
-        <div className="card-body">
-          <h2 className="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
-          </div>
-        </div>
+      <div>
+        <Navbar></Navbar>
+        <Products></Products>
       </div>
     );
   }
